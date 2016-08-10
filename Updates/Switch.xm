@@ -26,9 +26,8 @@ extern CFStringRef kSSUserDefaultsIdentifier;
 	CFPreferencesAppSynchronize(kSSUserDefaultsIdentifier);
 	SSSoftwareUpdatesStore *store = [[SSSoftwareUpdatesStore alloc] init];
 	[store hideApplicationBadgeForPendingUpdates];
-	if (enabled == kCFBooleanTrue) {
+	if (enabled == kCFBooleanTrue)
 		[store reloadFromServerWithCompletionBlock:^(void *block, NSArray *array, NSError *error) {}];
-	}
 	[store release];
 }
 

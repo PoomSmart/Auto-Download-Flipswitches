@@ -63,7 +63,7 @@ static SSURLBagContext *bagContext()
 	return context;
 }
 
-static NSArray *_configurations = nil;
+NSArray *_configurations = nil;
 
 static void reloadAutomaticDownloadConfigurations()
 {
@@ -76,7 +76,6 @@ static void reloadAutomaticDownloadConfigurations()
 		if (downloads == nil)
 			downloads = [bag valueForKey:@"automatic-downloads"];
 		_configurations = [downloads objectForKey:@"configurations"];
-		NSLog(@"%@", _configurations);
 		[_configurations retain];
 		CFPreferencesSetAppValue(CFSTR("auto-download-configurations"), _configurations, CFSTR("com.apple.mobilestoresettings"));
 		CFPreferencesAppSynchronize(CFSTR("com.apple.mobilestoresettings"));
@@ -109,13 +108,14 @@ static NSSet *ssDownloadKindsForCanonicalName(NSString *name)
 	}
 	if (index == NSNotFound)
 		return nil;
-	NSDictionary *configuration = configurations[index][name];
+	NSDictionary *configuration = configurations[index];
 	NSArray *mediaTypes = configuration[@"media-types"];
 	return [NSSet setWithArray:mediaTypes];
 }
 
 static BOOL automaticDownloadsEnabledForCanonicalName(NSString *name)
 {
+	reloadAutomaticDownloadConfigurations();
 	return [ssDownloadKindsForCanonicalName(name) isSubsetOfSet:activeAutomaticDownloadKinds()];
 }
 
