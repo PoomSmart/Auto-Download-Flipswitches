@@ -1,5 +1,5 @@
 Package: org.thebigboss.autodownloadflipswitchs
-Name: Automatic Download Flipswitchs
+Name: Automatic Download Flipswitches
 Depends: mobilesubstrate, com.a3tweaks.flipswitch, firmware (>= 7.0)
 Version: 0.0.1
 Architecture: iphoneos-arm
