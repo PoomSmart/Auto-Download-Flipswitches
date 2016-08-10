@@ -1,0 +1,9 @@
+Package: org.thebigboss.autodownloadflipswitchs
+Name: Automatic Download Flipswitchs
+Depends: mobilesubstrate, com.a3tweaks.flipswitch, firmware (>= 7.0)
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Toggles for automatic app downloads.
+Maintainer: PoomSmart
+Author: PoomSmart
+Section: Addons (Flipswitch)
