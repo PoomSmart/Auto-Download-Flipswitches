@@ -1,6 +1,3 @@
-#import <Preferences/PSSpecifier.h>
-#import <dlfcn.h>
-#import <substrate.h>
 #import "../PS.h"
 #import <Flipswitch/FSSwitchPanel.h>
 #import <Flipswitch/FSSwitchDataSource.h>
